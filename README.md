@@ -1,4 +1,4 @@
-# Canada.ca Life Events
+# Canada Food Guide
 
 ## Overview
 
@@ -61,7 +61,7 @@ Jekyll website
 project-root/
 ├── _config.yml       # Jekyll configuration
 ├── Gruntfile.js      # Task running
-├── package.json      # Contain the version number of Canada.ca Life Events
+├── package.json      # Contains the version number of the project
 ├── Gemfile           # Ruby dependencies
 └── README.md         # Project documentation
 ```
