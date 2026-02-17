@@ -1,5 +1,413 @@
-/* [Project name] styles */
+/* Canada's food guide (CFG) styles */
 
-.mybackground {
-   color: red;
+/* Background Colour themes 
+#7F0034 (Maroon)
+#EFDFD0 (Beige)
+#D7C3B0 (Beige-dark)
+#B4D4D4 (Aqua-Light)
+#066F6F (Aqua)
+#124A49 (Aqua-dark)
+#FEF9B6 (yellow)
+
+Highlight colours (ie darker rollovers or lighter rollovers)
+#CAEAEA (Aqua-light link rollover)
+#124A49 (Aqua-dark border)
+#E4C1CF (Maroon-light link rollover)
+#610229 (Maroon-dark border)
+*/
+
+@media print {
+
+  /*Formats H1 header block to print CFG content with a specific header*/
+  main hgroup#wb-cont.cfg {
+    background-color: #EFDFD0 !important;
+    display: flex;
+    min-height: 100px;
+    -webkit-print-color-adjust: exact !important;    /* For Chrome/Safari */
+    print-color-adjust: exact !important;             /* For Firefox/Edge/Chrome */    
+  }
+
+  /* Converts the Canada's food guide stacked header text to a maroon box for print */
+  main hgroup#wb-cont.cfg p {
+    width: 150px;
+    background-color: #7F0034 !important;
+    color: #FFF !important;
+    padding:10px 10px 10px 20px;
+    margin:0px;
+    display: flex;
+    font-size: 1.0em !important;
+    font-weight: bold;
+    flex-direction:column;
+    justify-content:flex-end;
+    line-height: 1.1em !important;
+    -webkit-print-color-adjust: exact !important;    /* For Chrome/Safari */
+    print-color-adjust: exact !important;            /* For Firefox/Edge/Chrome */    
+  }
+
+  /* Used in CFG kids section to replace maroon box with aqua coloured box */
+  main hgroup#wb-cont.cfg.cfg-kids p {
+    background-color: #124A49 !important;
+    color: #FFF !important;   
+  }
+
+   /*Used in CFG kids section to replace white text with yellow on words in span tag */
+   main hgroup#wb-cont.cfg.cfg-kids p span{
+    color: #FEF9B6 !important;   
+  }
+
+  /* Beige H1 background and puts it in a flex box */
+  main hgroup#wb-cont.cfg h1 {
+    background-color: #EFDFD0 !important;
+    color:#000 !important;
+    padding:10px;
+    margin:0px;
+    flex: 1;
+    display: flex;
+    font-size: 1.4em !important;
+    flex-direction:column;
+    justify-content:flex-end;
+    border-bottom:none;
+    -webkit-print-color-adjust: exact !important;    /* For Chrome/Safari */
+    print-color-adjust: exact !important;            /* For Firefox/Edge/Chrome */    
+  }
+
+  /*Used in CFG kids section to replace beige with yellow background */
+  main hgroup#wb-cont.cfg.cfg-kids h1 {
+    background-color: #FEF9B6 !important;
+  }
+
+
+  main .cfg-print {
+    font-size: 1.0rem !important;  
+  }
+  main .cfg-print h2 {
+    font-size: 1.4rem !important; 
+  }
+
+  main .cfg-print .h2.cfg-maroon, main .cfg-print .h3.cfg-maroon,main .cfg-print .h4.cfg-maroon,
+  main .cfg-print .h5.cfg-maroon, main .cfg-print .h6.cfg-maroon {
+    color: #7F0034 !important;
+  }
+
+  main .cfg-print div.lst-spcd>ol>li, main .cfg-print div.lst-spcd>ul>li,
+  main .cfg-print ol.lst-spcd>li, main .cfg-print ul.lst-spcd>li {
+    margin-bottom: 1px !important;
+  } 
+
+ 
+  main .cfg-print .bg-cfg-aqua, main .cfg-print.bg-cfg-aqua {
+     background-color: #066F6F !important;
+     color:#FFF;
+   }
+   
+  main .cfg-print .bg-cfg-aqua-light, main .cfg-print.bg-cfg-aqua-light {
+     background-color: #B4D4D4 !important;
+   }
+   main .cfg-print .bg-cfg-aqua, main .cfg-print .bg-cfg-aqua-light,
+   main .cfg-print.bg-cfg-aqua, main .cfg-print.bg-cfg-aqua-light {    
+    -webkit-print-color-adjust: exact !important;    /* For Chrome/Safari */
+    print-color-adjust: exact !important;            /* For Firefox/Edge/Chrome */
+  }
+}
+
+/*Replace red underline under H1 with maroon coloured one */
+h1#wb-cont.cfg, hgroup#wb-cont.cfg h1 {
+  border-bottom: 0.18em solid #7F0034;
+  border-image: linear-gradient(to right, #7F0034 71px, transparent 71px);
+  border-image-slice: 1;
+}
+
+/* Background colours */
+.bg-cfg-maroon {
+  background-color: #7F0034 !important;
+  color: #FFF !important;
+}
+
+.bg-cfg-maroon a {
+  color: #FFF !important;
+}
+.bg-cfg-maroon a:hover, .bg-cfg-maroon a:focus {
+  color: #B3FFFF !important;
+}
+
+
+.bg-cfg-beige {
+  background-color: #EFDFD0!important;
+}
+
+.bg-cfg-beige a {
+  color: #7F0034 !important;
+}
+
+.bg-cfg-beige a:hover, .bg-cfg-beige a:focus {
+  color: #124A49 !important;
+}
+
+.bg-cfg-aqua {
+  background-color: #066F6F !important;
+  color: #FFF !important;
+}
+
+.bg-cfg-aqua a {
+  color: #FFF !important;
+}
+
+.bg-cfg-aqua a:hover, .bg-cfg-aqua a:focus {
+  color: #B3FFFF !important;
+}
+
+.bg-cfg-aqua-dark {
+  background-color: #124A49;
+  color: #FFF !important;
+}
+
+.bg-cfg-aqua-dark a {
+  color: #FFF !important;
+}
+
+.bg-cfg-aqua-dark a:hover, .bg-cfg-aqua-dark a:focus {
+  color: #B3FFFF !important;
+}
+
+.bg-cfg-aqua-light {
+  background-color: #B4D4D4 !important;
+}
+
+.bg-cfg-aqua-light a {
+  color:#7F0034 !important;
+}
+
+.bg-cfg-aqua-light a:hover, .bg-cfg-aqua-light a:focus {
+  color: #124A49 !important;
+}
+
+.bg-cfg-yellow {
+  background-color: #FEF9B6 !important;
+}
+
+.bg-cfg-yellow a {
+  color: #7F0034 !important;
+}
+
+.bg-cfg-yellow a:hover, .bg-cfg-yellow a:focus {
+color:#124A49 !important;
+}
+
+/* Text colours */
+.cfg-maroon {
+  color: #7F0034;
+}
+
+.cfg-aqua {
+  color: #066F6F;
+}
+
+.cfg-aqua-dark {
+  color: #124A49;
+}
+
+/* Borders */
+.cfg-brdr-maroon {
+  border-color:#7F0034 !important;
+}
+
+.cfg-brdr {
+  border: 15px solid #7F0034;
+}
+
+.cfg-brdr-tp {
+  border-top: 15px solid #7F0034;
+}
+
+.cfg-brdr-rght {
+  border-right: 15px solid #7F0034;
+}
+
+.cfg-brdr-bttm {
+  border-bottom: 15px solid #7F0034;
+}
+
+.cfg-brdr-lft {
+  border-left: 15px solid #7F0034;
+}
+
+.cfg-recipes .wb-paginate-pager .pagination>.active>button, .cfg-recipes .wb-paginate-pager .pagination>.active>button:focus, .cfg-recipes .wb-paginate-pager .pagination>.active>button:hover {
+    background: #066F6F !important;
+}
+
+.cfg-recipe-icons li {
+   white-space: nowrap;
+}
+
+.cfg-recipe-icons img {
+    max-height: 40px !important;
+}
+
+.cfg-recipe-icons a {
+    color:#FFF !important;
+}
+
+.cfg-recipe-icons a:hover {
+    text-decoration: none !important;
+}
+
+
+.gc-features .bg-cfg-maroon:hover, .gc-features .bg-cfg-maroon:focus-within {
+    /*background-color: #066F6F;*/
+    /*color: #FFF;*/
+}
+
+.gc-features .bg-cfg-aqua:hover, .gc-features .bg-cfg-aqua:focus-within {
+  /*background-color: #7F0034;*/
+  /*color: #FFF;*/
+}
+
+.gc-features .bg-cfg-beige:hover, .gc-features .bg-cfg-beige:focus-within {
+    /*background-color: #D7C3B0;*/
+    /*color: #FFF;*/
+}
+
+/* Panel - Maroon */
+.panel-cfg-maroon {
+    border-color: #610229; 
+}
+
+.panel-cfg-maroon>.panel-heading {
+    color: #fff;
+    background-color: #7F0034;
+    border-color: #610229;
+}
+
+.panel-cfg-maroon>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #610229;
+}
+
+.panel-cfg-maroon>.panel-heading .badge {
+    color: #7F0034;
+    background-color: #fff;
+}
+
+.panel-cfg-maroon>.panel-footer+.panel-collapse>.panel-body {
+    border-bottom-color: #610229;
+}
+
+
+.btn-cfg-aqua {
+    color: #fff !important;
+    background-color: #066F6F;
+    border-color: #124A49;
+}
+
+.btn-cfg-aqua.focus,.btn-cfg-aqua:focus, .btn-cfg-aqua:hover,
+.btn-cfg-aqua.active,.btn-cfg-aqua:active,.open>.btn-cfg-aqua.dropdown-toggle,
+.btn-cfg-aqua.active.focus,.btn-cfg-aqua.active:focus,.btn-cfg-aqua.active:hover,
+.btn-cfg-aqua:active.focus,.btn-cfg-aqua:active:focus,.btn-cfg-aqua:active:hover, 
+.open>.btn-cfg-aqua.dropdown-toggle.focus,.open>.btn-cfg-aqua.dropdown-toggle:focus,
+.open>.btn-cfg-aqua.dropdown-toggle:hover {
+    color: #fff !important;
+    background-color: #124A49;
+    border-color: #000;
+}
+
+.btn-cfg-aqua.disabled.focus,.btn-cfg-aqua.disabled:focus,.btn-cfg-aqua.disabled:hover,
+.btn-cfg-aqua[disabled].focus,.btn-cfg-aqua[disabled]:focus,.btn-cfg-aqua[disabled]:hover,
+fieldset[disabled] .btn-cfg-aqua.focus,fieldset[disabled] .btn-cfg-aqua:focus,fieldset[disabled] .btn-cfg-aqua:hover {
+    background-color: #066F6F;
+    border-color: #000;
+}
+
+.btn-cfg-aqua .badge {
+    color: #066F6F;
+    background-color: #fff;
+}
+
+.btn-cfg-aqua:visited {
+    color: #fff !important;
+}
+
+.btn-cfg-maroon {
+    color: #fff !important;
+    background-color: #7F0034;
+    border-color: #610229;
+}
+
+.btn-cfg-maroon.focus,.btn-cfg-maroon:focus, .btn-cfg-maroon:hover,
+.btn-cfg-maroon.active,.btn-cfg-maroon:active,.open>.btn-cfg-maroon.dropdown-toggle,
+.btn-cfg-maroon.active.focus,.btn-cfg-maroon.active:focus,.btn-cfg-maroon.active:hover,
+.btn-cfg-maroon:active.focus,.btn-cfg-maroon:active:focus,.btn-cfg-maroon:active:hover, 
+.open>.btn-cfg-maroon.dropdown-toggle.focus,.open>.btn-cfg-maroon.dropdown-toggle:focus,
+.open>.btn-cfg-maroon.dropdown-toggle:hover {
+  color: #fff !important;
+    background-color: #610229;
+    border-color: #3E011A ;
+}
+
+.btn-cfg-maroon.disabled.focus,.btn-cfg-maroon.disabled:focus,.btn-cfg-maroon.disabled:hover,
+.btn-cfg-maroon[disabled].focus,.btn-cfg-maroon[disabled]:focus,.btn-cfg-maroon[disabled]:hover,
+fieldset[disabled] .btn-cfg-maroon.focus,fieldset[disabled] .btn-cfg-maroon:focus,fieldset[disabled] .btn-cfg-maroon:hover {
+    background-color: #7F0034;
+    border-color: #3E011A;
+}
+
+.btn-cfg-maroon .badge {
+    color: #7F0034;
+    background-color: #fff
+}
+
+.btn-cfg-maroon:visited {
+    color: #fff !important;
+}
+
+.btn-cfg-beige {
+    color: #000 !important;
+    background-color: #EFDFD0;
+    border-color: #D7C3B0;
+}
+
+.btn-cfg-beige.focus,.btn-cfg-beige:focus, .btn-cfg-beige:hover,
+.btn-cfg-beige.active,.btn-cfg-beige:active,.open>.btn-cfg-beige.dropdown-toggle,
+.btn-cfg-beige.active.focus,.btn-cfg-beige.active:focus,.btn-cfg-beige.active:hover,
+.btn-cfg-beige:active.focus,.btn-cfg-beige:active:focus,.btn-cfg-beige:active:hover,
+.open>.btn-cfg-beige.dropdown-toggle.focus,.open>.btn-cfg-beige.dropdown-toggle:focus,
+.open>.btn-cfg-beige.dropdown-toggle:hover {
+    color: #000 !important;
+    background-color: #D7C3B0;
+    border-color: #756864;
+}
+
+.btn-cfg-beige.disabled.focus,.btn-cfg-beige.disabled:focus,.btn-cfg-beige.disabled:hover,
+.btn-cfg-beige[disabled].focus,.btn-cfg-beige[disabled]:focus,.btn-cfg-beige[disabled]:hover,
+fieldset[disabled] .btn-cfg-beige.focus,fieldset[disabled] .btn-cfg-beige:focus,fieldset[disabled] .btn-cfg-beige:hover {
+    background-color: #EFDFD0;
+    border-color: #D7C3B0;
+}
+
+.btn-cfg-beige .badge {
+    color: #000;
+    background-color: #fff;
+}
+
+.btn-cfg-beige:visited {
+    color: #000 !important;
+}
+
+/*For auto generated pagination, makes the current button maroon */
+.cfg .wb-paginate-pager .pagination>.active>button, .cfg .wb-paginate-pager .pagination>.active>button:focus, .cfg .wb-paginate-pager .pagination>.active>button:hover {
+  background-color: #7F0034 !important;
+}
+
+.cfg li .list-group-item.active {
+    color: #fff !important;
+    background-color: #7F0034 !important;
+    border-color: #610229 !important;  
+}
+
+.gc-followus ul .pinterest::before {
+    background-image: url("/content/dam/hc-sc/images/working-folder/users/alan/food-guide/pinterest.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    height: 38px;
+    margin-right: 10px;
+    min-width: 38px;
 }
